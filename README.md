@@ -25,11 +25,17 @@ docker run -d --network my-eapp --name mongodb mongo:latest
 
 docker build -t your-username/docker-email-app .
 
-**4. Run the Application Container**
+**4. Run the MongoDB Container:**
+
+   Run the MongoDB container and connect it to the Docker network
+
+   docker run -d --network my-eapp --name mongodb -p 27017:27017 mongo:latest
+
+**5. Run the Application Container**
 
 docker run -d -p 3000:3000 --network my-eapp --name myapp your-username/docker-email-app
 
-**5. Access the Application**
+**6. Access the Application**
 
 Open your web browser and navigate to http://localhost:3000.
 
